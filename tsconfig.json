@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "target": "es2015",
+        "module": "commonjs",
+        "outDir": "lib",
+        "declaration": true
+    },
+    "files": [
+        "typings/main.d.ts",
+        "node_modules/parse-ids/lib/ids.d.ts",
+        "src/parse-chise-ids.ts"
+    ]
+}
