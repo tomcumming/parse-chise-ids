@@ -1,9 +1,9 @@
 {
   "name": "parse-chise-ids",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Parser for the IDS files provided by the chise project",
   "main": "lib/parse-chise-ids.js",
-  "author": "Tom Cumming <mail@tomcumming.co.uk>",  
+  "author": "Tom Cumming <mail@tomcumming.co.uk>",
   "license": "MIT",
   "scripts": {
     "test": "node test/test.js"
@@ -19,6 +19,7 @@
     "lib",
     "test"
   ],
+  "typings": "./lib/parse-chise-ids.d.ts",
   "keywords": [
     "CJK",
     "IDS",
