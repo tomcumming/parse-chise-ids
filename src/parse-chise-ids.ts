@@ -1,4 +1,4 @@
-import * as ids from "../node_modules/parse-ids/lib/ids";
+import * as ids from 'parse-ids';
 import * as fs from 'fs';
 
 export type Definition = {

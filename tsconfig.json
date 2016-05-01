@@ -9,7 +9,6 @@
     },
     "files": [
         "typings/main.d.ts",
-        "node_modules/parse-ids/lib/ids.d.ts",
         "src/parse-chise-ids.ts"
     ]
 }
