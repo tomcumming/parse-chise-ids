@@ -60,3 +60,17 @@ export function parse(contents: string, errorContext?: string): Map<string, Defi
 
     return ret;
 }
+
+/**
+ * Get the chise encoded name for a character
+ */
+export function chiseName(character: string): string {
+    if (character.charAt(0) === '&')
+        return character.substr(1, character.length - 2);
+
+    const cp = character.codePointAt(0);
+    const hex = cp.toString(16).toUpperCase();
+    const padding = hex.length % 4 === 0 ? '' : '0'.repeat(4 - hex.length % 4);
+    const head = cp > 0xffff ? 'U-' : 'U+';
+    return head + padding + hex;
+}
