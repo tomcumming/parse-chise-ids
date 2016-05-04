@@ -1,6 +1,6 @@
 {
   "name": "parse-chise-ids",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Parser for the IDS files provided by the chise project",
   "main": "lib/parse-chise-ids.js",
   "author": "Tom Cumming <mail@tomcumming.co.uk>",

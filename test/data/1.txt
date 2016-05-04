@@ -5,6 +5,8 @@ U+4E02	丂	丂
 U+4E03	七	七
 U+4E04	丄	丄
 U+4E05	丅	丅
+THIS-LINE-IS-A-LINE-FORMAT ERROR
+ids error ⿱一
 U+4E06	丆	⿱一丿
 U+4E07	万	万
 U+4E08	丈	丈

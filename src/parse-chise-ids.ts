@@ -11,22 +11,22 @@ const lineRegex = /(\S+)\s+(\S+)\s+(\S+)/;
 /**
  * Parse all the IDS (.txt) files in a given directory 
  */
-export function parseDirectory(directory: string, logErrors = false): Map<string, Definition> {
+export function parseDirectory(directory: string): Map<string, Definition> {
     var ret = new Map<string, Definition>();
 
     const files = fs.readdirSync(directory)
         .filter(file => file.endsWith('.txt'));
     files.forEach(file => {
-        var fileDefs = parseFile(directory, file, logErrors);
+        var fileDefs = parseFile(directory, file);
         fileDefs.forEach((def, name) => ret.set(name, def));
     });
 
     return ret;
 }
 
-export function parseFile(directory: string, filename: string, logErrors = false): Map<string, Definition> {
+export function parseFile(directory: string, filename: string): Map<string, Definition> {
     const content = fs.readFileSync(directory + '/' + filename, 'utf-8');
-    return parse(content, logErrors ? filename : undefined);
+    return parse(content, filename);
 }
 
 export function parse(contents: string, errorContext?: string): Map<string, Definition> {
@@ -35,8 +35,8 @@ export function parse(contents: string, errorContext?: string): Map<string, Defi
     const ret = new Map<string, Definition>();
 
     function errorMessage(ln: number, msg: string) {
-        if (errorContext !== undefined)
-            console.log(errorContext + ':' + ln + ': ' + msg);
+        if(errorContext !== null)
+            process.stderr.write(`${errorContext}:${ln}: ${msg}\n`);
     }
 
     lines.forEach((line, ln) => {
